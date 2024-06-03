@@ -13,7 +13,7 @@ const DashboardLayout = () => {
   const { colorMode } = useColorMode();
 
   const getClassNames = ({ isActive }) =>
-    isActive ? "active bg-gray-200" : "inactive hover:bg-gray-200";
+    isActive ? "active bg-gray-200" : "inactive hover:bg-gray-200 hover:text-gray-900";
 
   useEffect(() => {
     const handleResize = () => {
