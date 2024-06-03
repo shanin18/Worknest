@@ -12,11 +12,11 @@ const QuickJobs = () => {
   if (isPending) return "Loading...";
   return (
     <section>
-      <h2 className="font-semibold text-indigo-500 text-3xl text-center mb-8">
+      <h2 className="font-semibold text-indigo-500 text-3xl text-center mb-10">
         Quick Jobs
       </h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 lg:p-0">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {jobs.slice(0, 5)?.map((job) => (
           <JobCard key={job._id} job={job} />
         ))}

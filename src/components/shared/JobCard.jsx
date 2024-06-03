@@ -17,7 +17,7 @@ const JobCard = ({ job }) => {
   } = job;
 
   return (
-    <div className=" shadow-lg p-5 rounded-md border">
+    <div className=" shadow-lg p-5 rounded-md">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-semibold text-xl mb-3">{title}</h1>

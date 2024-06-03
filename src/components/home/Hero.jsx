@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="body-font">
       <div
-        className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+        className="max-w-7xl mx-auto flex pt-10 pb-24 md:flex-row flex-col items-center"
         bis_skin_checked="1"
       >
         <div
@@ -35,7 +35,7 @@ const Hero = () => {
                 type="text"
                 id="hero-field"
                 name="hero-field"
-                className="w-full rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full rounded border border-gray-300 bg-transparent focus:border-indigo-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
             <button className="flex items-center gap-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
@@ -45,7 +45,7 @@ const Hero = () => {
           </div>
         </div>
         <div
-          className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:p-10"
+          className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:p-10 sm:pr-0"
           bis_skin_checked="1"
         >
           <img

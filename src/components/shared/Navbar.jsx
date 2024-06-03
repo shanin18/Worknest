@@ -62,7 +62,7 @@ const Navbar = () => {
 
   return (
     <nav className="border-b">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-5 xl:px-0">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             {/* <!-- Mobile menu button--> */}
@@ -178,7 +178,7 @@ const Navbar = () => {
 
                   {isOpen && (
                     <div
-                      className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-3"
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="user-menu-button"
@@ -186,7 +186,7 @@ const Navbar = () => {
                     >
                       <a
                         href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
                         role="menuitem"
                         id="user-menu-item-0"
                       >
@@ -194,7 +194,7 @@ const Navbar = () => {
                       </a>
                       <a
                         href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
                         role="menuitem"
                         id="user-menu-item-1"
                       >
@@ -202,7 +202,7 @@ const Navbar = () => {
                       </a>
                       <p
                         onClick={handleLogOut}
-                        className="block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 "
+                        className="block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md"
                         role="menuitem"
                         id="user-menu-item-2"
                       >
