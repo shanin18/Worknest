@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    @apply font-medium text-indigo-500 px-3 py-2
+}
+
+.inactive{
+    @apply dark:text-white font-medium px-3 py-2
+}
