@@ -8,6 +8,8 @@ import DashboardLayout from "../layout/DashboardLayout";
 import AllJobs from "../pages/AllJobs";
 import AddJobs from "../pages/AddJobs";
 import EditJobs from "../pages/EditJobs";
+import Jobs from "../pages/Jobs";
+import MyApplications from "../pages/MyApplications";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
             <Home />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/jobs",
+        element: <Jobs />,
+      },
+      {
+        path: "/my-applications",
+        element: <MyApplications />,
       },
       {
         path: "/login",

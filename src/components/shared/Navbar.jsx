@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
+import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,50 +62,18 @@ const Navbar = () => {
 
   return (
     <nav className="border-b">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             {/* <!-- Mobile menu button--> */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               type="button"
-              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
             >
-              <span className="absolute -inset-0.5"></span>
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="block h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-              <svg
-                className="hidden h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+             <HiMiniBars3BottomLeft className="text-xl"/>
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+          <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-between">
             <div className="flex flex-shrink-0 items-center gap-2">
               <img
                 className="h-8 w-auto"
@@ -113,8 +82,8 @@ const Navbar = () => {
               />
               <p className="font-semibold text-xl">WorkNest</p>
             </div>
-            <div className="hidden sm:ml-6 sm:flex items-center">
-              <div className="flex space-x-4 gap-2">
+            <div className="hidden md:ml-6 md:flex items-center">
+              <div className="flex space-x-2 gap-2">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -144,7 +113,7 @@ const Navbar = () => {
                 </NavLink>
                 {user?.email && (
                   <NavLink
-                    to="/dashboard"
+                    to="/dashboard/all-jobs"
                     className={({ isActive }) =>
                       isActive ? "active" : "inactive"
                     }
@@ -153,7 +122,6 @@ const Navbar = () => {
                     Dashboard
                   </NavLink>
                 )}
-
                 {!user?.email && (
                   <NavLink
                     to={location.pathname === "/login" ? "/login" : "/signup"}
@@ -167,7 +135,7 @@ const Navbar = () => {
                 )}
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto sm:pr-0">
               <IconButton
                 onClick={toggleColorMode}
                 isRound={true}
@@ -222,7 +190,7 @@ const Navbar = () => {
                         role="menuitem"
                         id="user-menu-item-0"
                       >
-                        Your Profile
+                        View Profile
                       </a>
                       <a
                         href="#"
@@ -250,17 +218,13 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`sm:hidden absolute w-full top-0 duration-300 h-screen ${
+        className={`md:hidden absolute w-full top-0 duration-300 h-screen ${
           colorMode === "dark" ? "bg-[#1a202c]" : "bg-white"
-        } ${mobileMenuOpen ? "left-0" : "-left-[650px]"}`}
+        } ${mobileMenuOpen ? "left-0" : "-left-[770px]"}`}
         id="mobile-menu"
       >
         <div className="flex flex-shrink-0 items-center justify-between border-b px-5 py-3">
-          <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
-          />
+          <p className="font-semibold text-xl">WorkNest</p>
 
           <IconButton
             onClick={() => setMobileMenuOpen(false)}
@@ -283,6 +247,29 @@ const Navbar = () => {
           >
             Home
           </NavLink>
+          <NavLink
+            to="/jobs"
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+            aria-current="page"
+          >
+            Jobs
+          </NavLink>
+          <NavLink
+            to="/my-applications"
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+            aria-current="page"
+          >
+            My Applications
+          </NavLink>
+          {user?.email && (
+            <NavLink
+              to="/dashboard/all-jobs"
+              className={({ isActive }) => (isActive ? "active" : "inactive")}
+              aria-current="page"
+            >
+              Dashboard
+            </NavLink>
+          )}
 
           {!user?.email && (
             <NavLink
