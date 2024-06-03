@@ -1,7 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
+import JobCard from "../shared/JobCard";
+
 const QuickJobs = () => {
+  const { isPending, data: jobs } = useQuery({
+    queryKey: ["jobs"],
+    queryFn: () =>
+      fetch("http://localhost:5000/jobs").then((res) => res.json()),
+  });
+  console.log(jobs);
+
+  if (isPending) return "Loading...";
   return (
     <section>
-      <h2 className="font-semibold text-indigo-500 text-2xl md:text-3xl text-center">Quick Jobs</h2>
+      <h2 className="font-semibold text-indigo-500 text-3xl text-center mb-8">
+        Quick Jobs
+      </h2>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 lg:p-0">
+        {jobs.slice(0, 5)?.map((job) => (
+          <JobCard key={job._id} job={job} />
+        ))}
+      </div>
     </section>
   );
 };
