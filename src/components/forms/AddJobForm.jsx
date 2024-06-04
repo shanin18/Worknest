@@ -1,14 +1,53 @@
+import { useToast } from "@chakra-ui/react";
+import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
+import Creatable from "react-select/creatable";
 
 const AddJobForm = () => {
+  const [keyResponsibilities, setKeyResponsibilities] = useState([]);
+  const toast = useToast();
+
+  const handleChange = (keyResponsibilities) => {
+    setKeyResponsibilities(keyResponsibilities);
+  };
+  console.log(keyResponsibilities);
   const {
     register,
     control,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => mutation.mutate(data);
 
+  const mutation = useMutation({
+    mutationFn: (data) =>
+      fetch(`https://worknest-server.vercel.app/jobs`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-type": "application/json",
+        },
+      }),
+    onSuccess: () => {
+      toast({
+        title: "posted successfully!",
+        status: "success",
+        position: "top",
+        duration: 3000,
+        isClosable: true,
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: error,
+        status: "error",
+        position: "top",
+        duration: 3000,
+        isClosable: true,
+      });
+    },
+  });
   const renderFieldArray = (fields, append, remove, name, label) => (
     <div>
       <label className="label">{label}</label>
@@ -34,10 +73,10 @@ const AddJobForm = () => {
     </div>
   );
 
-  const keyResponsibilities = useFieldArray({
-    control,
-    name: "key_responsibilities",
-  });
+  //   const keyResponsibilities = useFieldArray({
+  //     control,
+  //     name: "key_responsibilities",
+  //   });
   const behavioralAttributes = useFieldArray({
     control,
     name: "behavioral_attributes",
@@ -56,7 +95,6 @@ const AddJobForm = () => {
   const whoCanApply = useFieldArray({ control, name: "who_can_apply" });
   const activities = useFieldArray({ control, name: "activities" });
   const footprint = useFieldArray({ control, name: "footprint" });
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="md:flex items-center gap-5 space-y-5 md:space-y-0 mb-5">
@@ -259,77 +297,15 @@ const AddJobForm = () => {
           {errors.candidates_hired && <span>This field is required</span>}
         </div>
       </div>
-
-      {renderFieldArray(
-        keyResponsibilities.fields,
-        keyResponsibilities.append,
-        keyResponsibilities.remove,
-        "key_responsibilities",
-        "Key Responsibilities"
-      )}
-      {renderFieldArray(
-        behavioralAttributes.fields,
-        behavioralAttributes.append,
-        behavioralAttributes.remove,
-        "behavioral_attributes",
-        "Behavioral Attributes"
-      )}
-      {renderFieldArray(
-        eligibilityCriteria.fields,
-        eligibilityCriteria.append,
-        eligibilityCriteria.remove,
-        "eligibility_criteria",
-        "Eligibility Criteria"
-      )}
-      {renderFieldArray(
-        benefits.fields,
-        benefits.append,
-        benefits.remove,
-        "benefits",
-        "Benefits"
-      )}
-      {renderFieldArray(
-        shiftOptions.fields,
-        shiftOptions.append,
-        shiftOptions.remove,
-        "shift_options",
-        "Shift Options"
-      )}
-      {renderFieldArray(
-        skillsRequired.fields,
-        skillsRequired.append,
-        skillsRequired.remove,
-        "skills_required",
-        "Skills Required"
-      )}
-      {renderFieldArray(
-        learnCertifications.fields,
-        learnCertifications.append,
-        learnCertifications.remove,
-        "learn_certifications",
-        "Learn Certifications"
-      )}
-      {renderFieldArray(
-        whoCanApply.fields,
-        whoCanApply.append,
-        whoCanApply.remove,
-        "who_can_apply",
-        "Who Can Apply"
-      )}
-      {renderFieldArray(
-        activities.fields,
-        activities.append,
-        activities.remove,
-        "activities",
-        "Activities"
-      )}
-      {renderFieldArray(
-        footprint.fields,
-        footprint.append,
-        footprint.remove,
-        "footprint",
-        "Footprint"
-      )}
+      {/* <div className="input">
+        <Creatable
+          className="border-0 placeholder:none"
+          isClearable
+          isMulti
+          value={keyResponsibilities}
+          onChange={handleChange}
+        />
+      </div> */}
 
       <button
         type="submit"
