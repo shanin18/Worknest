@@ -5,7 +5,7 @@ const Jobs = () => {
   const { isPending, data: jobs } = useQuery({
     queryKey: ["jobs"],
     queryFn: () =>
-      fetch("http://localhost:5000/jobs").then((res) => res.json()),
+      fetch("https://worknest-server.vercel.app/jobs").then((res) => res.json()),
   });
   console.log(jobs);
 

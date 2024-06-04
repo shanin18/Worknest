@@ -5,14 +5,14 @@ import { GiTimeTrap } from "react-icons/gi";
 import { HiOutlineBuildingOffice } from "react-icons/hi2";
 import { IoHomeOutline } from "react-icons/io5";
 import { PiSuitcase } from "react-icons/pi";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const JobDetails = () => {
   const { id } = useParams();
   const { isPending, data: details } = useQuery({
     queryKey: ["job-details"],
     queryFn: () =>
-      fetch(`http://localhost:5000/jobs/details/${id}`).then((res) =>
+      fetch(`https://worknest-server.vercel.app/jobs/details/${id}`).then((res) =>
         res.json()
       ),
   });
@@ -26,7 +26,7 @@ const JobDetails = () => {
     image,
     location,
     start_date,
-    ctc_annual,
+    salary,
     experience_required,
     apply_by,
     posted_days_ago,
@@ -38,9 +38,13 @@ const JobDetails = () => {
     skills_required,
     learn_certifications,
     who_can_apply,
-    about_company,
-    salary,
     number_of_openings,
+    website,
+    mission,
+    growth_curve,
+    hiring_since,
+    opportunities_posted,
+    candidates_hired,
   } = details;
 
   return (
@@ -71,7 +75,6 @@ const JobDetails = () => {
           <div>
             <div>
               <p className="font-medium text-sm">
-                {" "}
                 <AiOutlinePlayCircle className="mr-1 inline mb-1 text-lg" />{" "}
                 START DATE
               </p>
@@ -85,7 +88,7 @@ const JobDetails = () => {
                 (ANNUAL)
               </p>
             </div>
-            <p className="text-[15px]">{ctc_annual}</p>
+            <p className="text-[15px]">{salary}</p>
           </div>
           <div>
             <div>
@@ -122,7 +125,7 @@ const JobDetails = () => {
         <div className="mb-8">
           <h3 className="text-lg font-semibold mb-4">About the Job</h3>
           <p className="font-medium text-gray-600 dark:text-white mb-6">
-            Key responsibilities:{" "}
+            Key responsibilities:
           </p>
           {key_responsibilities?.map((item, idx) => (
             <p
@@ -191,7 +194,7 @@ const JobDetails = () => {
         <div className="mb-8">
           <h3 className="text-lg font-semibold mb-4">Salary</h3>
           <p className="text-[15px] text-medium dark:white">
-            Annual CTC: {salary?.annual_ctc}
+            Annual CTC: {salary}
           </p>
         </div>
 
@@ -217,20 +220,21 @@ const JobDetails = () => {
           </p>
         </div>
         <div className="mb-8">
-          <h3 className="text-lg font-semibold mb-4">
-            About {about_company?.name}
-          </h3>
-          <p className="text-[15px] text-gray-600 dark:white">
+          <h3 className="text-lg font-semibold mb-4">About {company}</h3>
+          <p className="text-[15px] text-gray-600 dark:text-white">
             <span className="font-medium">Mission: </span>
-            {about_company?.mission}
+            {mission}
           </p>
-          <p className="text-[15px] text-gray-600 dark:white">
+          <Link
+            to="https://www.edubridge.in"
+            className="text-[15px] text-gray-600 dark:text-white"
+          >
             <span className="font-medium">Website: </span>
-            {about_company?.website}
-          </p>
-          <p className="text-[15px] text-gray-600 dark:white">
+            {website}
+          </Link>
+          <p className="text-[15px] text-gray-600 dark:text-white">
             <span className="font-medium">Growth curve: </span>
-            {about_company?.growth_curve}
+            {growth_curve}
           </p>
         </div>
 
@@ -239,15 +243,15 @@ const JobDetails = () => {
             <h3 className="font-semibold mb-2">Activity on Internshala</h3>
             <div className="flex flex-wrap items-center gap-4 md:gap-6">
               <p className="text-sm text-gray-600 dark:text-white font-medium">
-                Hiring since{" "}
-                {about_company?.activity_on_internshala?.hiring_since}
+                Hiring since {" "}
+                {hiring_since}
               </p>
               <p className="text-sm text-gray-600 dark:text-white font-medium">
-                {about_company?.activity_on_internshala?.opportunities_posted}{" "}
+                {opportunities_posted} {" "}
                 opportunities posted
               </p>
               <p className="text-sm text-gray-600 dark:text-white font-medium">
-                {about_company?.activity_on_internshala?.candidates_hired}{" "}
+                {candidates_hired} {" "}
                 candidates hired
               </p>
             </div>

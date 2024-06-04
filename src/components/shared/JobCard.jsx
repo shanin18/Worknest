@@ -18,7 +18,7 @@ const JobCard = ({ job }) => {
     image,
     location,
     start_date,
-    ctc_annual,
+    salary,
     experience_required,
     posted_days_ago,
     type,
@@ -26,7 +26,7 @@ const JobCard = ({ job }) => {
 
   const mutation = useMutation({
     mutationFn: (id) =>
-      fetch(`http://localhost:5000/jobs/${id}`, {
+      fetch(`https://worknest-server.vercel.app/jobs/${id}`, {
         method: "DELETE",
       }),
     onSuccess: () => {
@@ -81,7 +81,7 @@ const JobCard = ({ job }) => {
           <div>
             <p className="font-medium text-sm">CTC (ANNUAL)</p>
           </div>
-          <p className="text-[15px]">{ctc_annual}</p>
+          <p className="text-[15px]">{salary}</p>
         </div>
         <div>
           <div>

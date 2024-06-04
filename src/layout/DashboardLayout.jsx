@@ -13,7 +13,9 @@ const DashboardLayout = () => {
   const { colorMode } = useColorMode();
 
   const getClassNames = ({ isActive }) =>
-    isActive ? "active bg-gray-200" : "inactive hover:bg-gray-200 hover:text-gray-900";
+    isActive
+      ? "active bg-gray-200"
+      : "inactive hover:bg-gray-200 hover:text-gray-900";
 
   useEffect(() => {
     const handleResize = () => {
@@ -110,7 +112,9 @@ const DashboardLayout = () => {
               <HiOutlineBars3 className="text-2xl" />
             </button>
           </div>
-          <Outlet />
+          <div className="h-[90vh] lg:h-screen overflow-y-scroll">
+            <Outlet />
+          </div>
         </div>
       </div>
     </section>

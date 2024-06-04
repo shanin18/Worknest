@@ -9,3 +9,11 @@
 .inactive{
     @apply dark:text-white font-medium px-3 py-2
 }
+
+.input{
+    @apply block w-full rounded-md border py-2 px-4 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 dark:text-white dark:bg-transparent
+}
+
+.label{
+    @apply block font-medium leading-6 text-gray-900 dark:text-white mb-2
+}
