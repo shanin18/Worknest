@@ -44,18 +44,18 @@ const JobDetails = () => {
   } = details;
 
   return (
-    <section className="max-w-7xl mx-auto rounded-md my-14">
+    <section className="max-w-5xl mx-auto rounded-md my-14 px-5 xl:px-0">
       <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold md:font-bold text-center mb-8">
         {title}
       </h1>
 
-      <div className=" shadow-lg p-5 rounded-md">
-        <div className="flex items-center justify-between">
+      <div className="shadow-lg p-5 rounded-md">
+        <div className="flex items-center gap-5 justify-between">
           <div>
             <h1 className="font-semibold text-xl mb-3">{title}</h1>
             <h2 className="font-semibold">{company}</h2>
           </div>
-          <img src={image} alt="logo" className="w-10 md:w-20" />
+          <img src={image} alt="logo" className="w-10 sm:w-14" />
         </div>
         <div className="flex items-center gap-2 my-4">
           <span>
@@ -237,7 +237,7 @@ const JobDetails = () => {
         <div className="mb-8">
           <div className="border rounded-md px-5 py-3">
             <h3 className="font-semibold mb-2">Activity on Internshala</h3>
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center gap-4 md:gap-6">
               <p className="text-sm text-gray-600 dark:text-white font-medium">
                 Hiring since{" "}
                 {about_company?.activity_on_internshala?.hiring_since}
@@ -253,8 +253,8 @@ const JobDetails = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center">
-          <button className="px-5 py-1 rounded bg-indigo-500 text-white font-semibold">
+        <div className="flex items-center justify-center mb-3">
+          <button className="px-5 py-2 rounded bg-indigo-500 text-white md:text-lg font-semibold">
             Apply Now
           </button>
         </div>
