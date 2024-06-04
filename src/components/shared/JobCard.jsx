@@ -122,9 +122,12 @@ const JobCard = ({ job }) => {
             >
               View
             </Link>
-            <button className="px-5 py-1 rounded bg-green-500 text-white font-semibold">
+            <Link
+              to={`/dashboard/edit-jobs/${_id}`}
+              className="px-5 py-1 rounded bg-green-500 text-white font-semibold"
+            >
               <FaRegEdit className="inline mb-1 mr-1" /> Edit
-            </button>
+            </Link>
             <button
               className="px-5 py-1 rounded bg-red-500 text-white font-semibold"
               onClick={() => mutation.mutate(_id)}
