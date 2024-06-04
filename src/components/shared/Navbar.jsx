@@ -109,7 +109,7 @@ const Navbar = () => {
                   }
                   aria-current="page"
                 >
-                  My Applications
+                  Applications
                 </NavLink>
                 {user?.email && (
                   <NavLink

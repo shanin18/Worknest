@@ -2,9 +2,11 @@
 
 import { HiOutlineBuildingOffice } from "react-icons/hi2";
 import { IoHomeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
   const {
+    _id,
     title,
     company,
     image,
@@ -59,12 +61,17 @@ const JobCard = ({ job }) => {
 
       <div className="flex items-center gap-5">
         <p className="text-xs">{posted_days_ago} Days ago</p>
-        <p>{type}</p>
+        <p className="px-2 py-1 rounded-md bg-gray-100 text-xs dark:text-gray-800">{type}</p>
       </div>
 
       <hr className="mt-3 mb-5" />
       <div className="flex gap-5">
-        <button className="text-indigo-500 font-semibold">Details</button>
+        <Link
+          to={`/jobs/details/${_id}`}
+          className="text-indigo-500 font-semibold"
+        >
+          Details
+        </Link>
         <button className="px-5 py-1 rounded bg-indigo-500 text-white font-semibold">
           Apply
         </button>
