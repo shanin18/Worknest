@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-
+import { useToast } from "@chakra-ui/react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { FaRegEdit } from "react-icons/fa";
 import { HiOutlineBuildingOffice } from "react-icons/hi2";
 import { IoHomeOutline } from "react-icons/io5";
@@ -8,8 +9,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const JobCard = ({ job }) => {
   const pathName = useLocation().pathname.includes("/all-jobs");
-  console.log(pathName);
-
+  const queryClient = useQueryClient();
+  const toast = useToast();
   const {
     _id,
     title,
@@ -22,6 +23,32 @@ const JobCard = ({ job }) => {
     posted_days_ago,
     type,
   } = job;
+
+  const mutation = useMutation({
+    mutationFn: (id) =>
+      fetch(`http://localhost:5000/jobs/${id}`, {
+        method: "DELETE",
+      }),
+    onSuccess: () => {
+      toast({
+        title: "Deleted successfully!",
+        status: "success",
+        position: "top",
+        duration: 3000,
+        isClosable: true,
+      });
+      queryClient.invalidateQueries("jobs");
+    },
+    onError: (error) => {
+      toast({
+        title: error,
+        status: "error",
+        position: "top",
+        duration: 3000,
+        isClosable: true,
+      });
+    },
+  });
 
   return (
     <div className=" shadow-lg p-5 rounded-md">
@@ -98,7 +125,10 @@ const JobCard = ({ job }) => {
             <button className="px-5 py-1 rounded bg-green-500 text-white font-semibold">
               <FaRegEdit className="inline mb-1 mr-1" /> Edit
             </button>
-            <button className="px-5 py-1 rounded bg-red-500 text-white font-semibold">
+            <button
+              className="px-5 py-1 rounded bg-red-500 text-white font-semibold"
+              onClick={() => mutation.mutate(_id)}
+            >
               <RiDeleteBin6Line className="inline mb-1 mr-1" /> Delete
             </button>
           </div>

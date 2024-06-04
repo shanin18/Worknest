@@ -7,7 +7,6 @@ const QuickJobs = () => {
     queryFn: () =>
       fetch("http://localhost:5000/jobs").then((res) => res.json()),
   });
-  console.log(jobs);
 
   if (isPending) return "Loading...";
   return (
