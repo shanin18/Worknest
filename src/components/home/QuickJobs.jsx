@@ -5,7 +5,9 @@ const QuickJobs = () => {
   const { isPending, data: jobs } = useQuery({
     queryKey: ["jobs"],
     queryFn: () =>
-      fetch("https://worknest-server.vercel.app/jobs").then((res) => res.json()),
+      fetch("https://worknest-server.vercel.app/jobs").then((res) =>
+        res.json()
+      ),
   });
 
   if (isPending) return "Loading...";
@@ -16,7 +18,7 @@ const QuickJobs = () => {
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {jobs.slice(0, 5)?.map((job) => (
+        {jobs?.slice(0, 5)?.map((job) => (
           <JobCard key={job._id} job={job} />
         ))}
       </div>
