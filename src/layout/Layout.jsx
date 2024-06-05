@@ -4,11 +4,13 @@ import Footer from "../components/shared/Footer";
 
 const Layout = () => {
   return (
-    <div>
+    <section>
       <Navbar />
-      <Outlet />
+      <div className="min-h-[calc(100vh-517px)]">
+        <Outlet />
+      </div>
       <Footer />
-    </div>
+    </section>
   );
 };
 

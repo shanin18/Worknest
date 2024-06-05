@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="border-t mt-24">
       <div className="body-font">
         <div
-          className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+          className="max-w-7xl px-5 py-24 mx-auto flex  lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
           bis_skin_checked="1"
         >
           <div
@@ -17,8 +17,8 @@ const Footer = () => {
           >
             <p className="text-2xl">WorkNest</p>
             <p className="mt-2">Find you best job</p>
-            
-            <label className="flex items-center bg-transparent gap-2 border p-3 rounded-md w-fit mt-4">
+
+            <label className="flex items-center bg-transparent gap-2 border p-3 rounded-md w-full mt-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
@@ -65,10 +65,14 @@ const Footer = () => {
                   <a className="cursor-pointer hover:underline">My Account</a>
                 </li>
                 <li>
-                  <a className="cursor-pointer hover:underline">Login / Register</a>
+                  <a className="cursor-pointer hover:underline">
+                    Login / Register
+                  </a>
                 </li>
                 <li>
-                  <a className="cursor-pointer hover:underline">My Applications</a>
+                  <a className="cursor-pointer hover:underline">
+                    My Applications
+                  </a>
                 </li>
               </nav>
             </div>
@@ -78,7 +82,9 @@ const Footer = () => {
               </h2>
               <nav className="list-none mb-10 space-y-3">
                 <li>
-                  <a className="cursor-pointer hover:underline">Privacy Policy</a>
+                  <a className="cursor-pointer hover:underline">
+                    Privacy Policy
+                  </a>
                 </li>
                 <li>
                   <a className="cursor-pointer hover:underline">Terms Of Use</a>
@@ -97,7 +103,7 @@ const Footer = () => {
               </h2>
               <nav className="list-none mb-10">
                 <p className="mb-3">Save $3 with App New User Only</p>
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-5">
                   <div>
                     <img src={qrCode} alt="qr code image" />
                   </div>

@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unknown-property */
 import { IconButton, useColorMode, useToast } from "@chakra-ui/react";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+import logoDark from "/logoDark.png";
+import logoWhite from "/logoWhite.png";
 import useAuth from "../../hooks/useAuth";
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
@@ -66,18 +68,15 @@ const Navbar = () => {
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             {/* <!-- Mobile menu button--> */}
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              type="button"
-            >
-             <HiMiniBars3BottomLeft className="text-xl"/>
+            <button onClick={() => setMobileMenuOpen(true)} type="button">
+              <HiMiniBars3BottomLeft className="text-xl" />
             </button>
           </div>
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-between">
-            <div className="flex flex-shrink-0 items-center gap-2">
+            <div className="flex flex-shrink-0 items-center gap-1">
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                className="h-10 w-auto mb-1"
+                src={colorMode === "dark" ? logoWhite : logoDark}
                 alt="Your Company"
               />
               <p className="font-semibold text-xl">WorkNest</p>
