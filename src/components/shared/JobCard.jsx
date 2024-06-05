@@ -108,7 +108,7 @@ const JobCard = ({ job }) => {
             >
               Details
             </Link>
-            <button className="px-5 py-1 rounded bg-indigo-500 text-white font-semibold">
+            <button className="px-5 py-1 rounded bg-indigo-500 hover:bg-indigo-600 text-white font-semibold">
               Apply
             </button>
           </div>
@@ -118,18 +118,18 @@ const JobCard = ({ job }) => {
           <div className="flex flex-wrap gap-5">
             <Link
               to={`/jobs/details/${_id}`}
-              className="px-5 py-1 rounded bg-indigo-500 text-white font-semibold"
+              className="px-5 py-1 rounded bg-indigo-500 hover:bg-indigo-600 text-white font-semibold"
             >
               View
             </Link>
             <Link
               to={`/dashboard/edit-jobs/${_id}`}
-              className="px-5 py-1 rounded bg-green-500 text-white font-semibold"
+              className="px-5 py-1 rounded bg-green-500 hover:bg-green-600 text-white font-semibold"
             >
               <FaRegEdit className="inline mb-1 mr-1" /> Edit
             </Link>
             <button
-              className="px-5 py-1 rounded bg-red-500 text-white font-semibold"
+              className="px-5 py-1 rounded bg-red-500 hover:bg-red-600 text-white font-semibold"
               onClick={() => mutation.mutate(_id)}
             >
               <RiDeleteBin6Line className="inline mb-1 mr-1" /> Delete

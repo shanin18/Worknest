@@ -6,6 +6,7 @@ import { HiOutlineBuildingOffice } from "react-icons/hi2";
 import { IoHomeOutline } from "react-icons/io5";
 import { PiSuitcase } from "react-icons/pi";
 import { Link, useParams } from "react-router-dom";
+import LoadingSpinner from "../components/others/LoadingSpinner";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const JobDetails = () => {
       ),
   });
 
-  if (isPending) return "Loading...";
+  if (isPending) return <LoadingSpinner />;
   console.log(details);
 
   const {

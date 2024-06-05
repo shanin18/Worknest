@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import EditJobForm from "../components/forms/EditJobForm";
+import LoadingSpinner from "../components/others/LoadingSpinner";
 
 const EditJobs = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const EditJobs = () => {
       ),
   });
 
-  if (isPending) return "Loading...";
+  if (isPending) return <LoadingSpinner />;
 
   return (
     <section className="p-5">
