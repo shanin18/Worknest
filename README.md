@@ -2,7 +2,7 @@
 
 <!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Contents <a name="about-project">WorkNest</a>
+# 📗 Table of Contents
 
 - [WorkNest](#-WorkNest-)
   - [🛠 Built With ](#-built-with-)
@@ -13,7 +13,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Run tests](#run-tests)
-    - [Email & Password](#Email-Password)
+    - [Email & Password](#Email-&-Password)
     - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
