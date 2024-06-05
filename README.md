@@ -27,8 +27,6 @@
 
 WorkNest is a cutting-edge platform designed to connect job seekers with employers in a seamless and efficient manner. Offering a comprehensive array of job listings across various industries, WorkNest simplifies the job search process with user-friendly features and advanced filtering options. Whether you are looking for your next career opportunity or the perfect hire, WorkNest provides the ideal ecosystem to meet your employment needs.
 
-<div style={text-align:center}><img src="https://i.ibb.co/KVfKJ76/thumbnail.png" alt="thumbnail" border="0"></div>
-
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
