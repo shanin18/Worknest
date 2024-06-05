@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import bannerImage from "../../assets/images/banner.png";
 
-const Hero = () => {
+const Hero = ({ handleSubmit }) => {
   return (
     <section className="body-font">
       <div
@@ -26,23 +27,26 @@ const Hero = () => {
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
             hexagon try-hard chambray.
           </p>
-          <div
+          <form
+            onSubmit={handleSubmit}
             className="flex w-full md:justify-start justify-center items-end"
             bis_skin_checked="1"
           >
             <div className="relative mr-4 w-full" bis_skin_checked="1">
               <input
                 type="text"
-                id="hero-field"
-                name="hero-field"
+                name="search"
                 className="w-full rounded border border-gray-300 bg-transparent focus:border-indigo-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <button className="flex items-center gap-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+            <button
+              type="submit"
+              className="flex items-center gap-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
+            >
               <FaMagnifyingGlass className="text-white" />
               <span className="text-lg font-medium">Find</span>
             </button>
-          </div>
+          </form>
         </div>
         <div
           className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:p-10 sm:pr-0"
