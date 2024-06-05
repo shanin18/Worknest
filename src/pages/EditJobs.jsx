@@ -2,8 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import EditJobForm from "../components/forms/EditJobForm";
 import LoadingSpinner from "../components/others/LoadingSpinner";
+import useTitle from "../hooks/useTitle";
 
 const EditJobs = () => {
+  useTitle("Edit Jobs");
+  
   const { id } = useParams();
   const { isPending, data } = useQuery({
     queryKey: ["job-details"],

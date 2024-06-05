@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import SignUpForm from "../components/forms/SignUpForm";
+import useTitle from "../hooks/useTitle";
 
 const SignUp = () => {
+  useTitle("Sign Up");
+
   return (
     <section className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -14,7 +17,7 @@ const SignUp = () => {
         <SignUpForm />
 
         <p className="mt-5 text-sm text-gray-500 text-end">
-          Already have an account? 
+          Already have an account?
           <Link
             to="/login"
             className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"

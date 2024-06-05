@@ -7,14 +7,17 @@ import { IoHomeOutline } from "react-icons/io5";
 import { PiSuitcase } from "react-icons/pi";
 import { Link, useParams } from "react-router-dom";
 import LoadingSpinner from "../components/others/LoadingSpinner";
+import useTitle from "../hooks/useTitle";
 
 const JobDetails = () => {
+  useTitle("Job Details");
+  
   const { id } = useParams();
   const { isPending, data: details } = useQuery({
     queryKey: ["job-details"],
     queryFn: () =>
-      fetch(`https://worknest-server.vercel.app/jobs/details/${id}`).then((res) =>
-        res.json()
+      fetch(`https://worknest-server.vercel.app/jobs/details/${id}`).then(
+        (res) => res.json()
       ),
   });
 
@@ -244,16 +247,13 @@ const JobDetails = () => {
             <h3 className="font-semibold mb-2">Activity on Internshala</h3>
             <div className="flex flex-wrap items-center gap-4 md:gap-6">
               <p className="text-sm text-gray-600 dark:text-white font-medium">
-                Hiring since {" "}
-                {hiring_since}
+                Hiring since {hiring_since}
               </p>
               <p className="text-sm text-gray-600 dark:text-white font-medium">
-                {opportunities_posted} {" "}
-                opportunities posted
+                {opportunities_posted} opportunities posted
               </p>
               <p className="text-sm text-gray-600 dark:text-white font-medium">
-                {candidates_hired} {" "}
-                candidates hired
+                {candidates_hired} candidates hired
               </p>
             </div>
           </div>

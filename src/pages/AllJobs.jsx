@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import JobCard from "../components/shared/JobCard";
 import LoadingSpinner from "../components/others/LoadingSpinner";
+import useTitle from "../hooks/useTitle";
 
 const AllJobs = () => {
+  useTitle("All Jobs");
+
   const { isPending, data: jobs } = useQuery({
     queryKey: ["jobs"],
     queryFn: () =>
