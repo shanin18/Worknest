@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import googleImage from "../../assets/images/google.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -42,7 +42,7 @@ const SignUpForm = () => {
         toast({
           title: "Account created successfully!",
           status: "success",
-          position:"top",
+          position: "top",
           duration: 3000,
           isClosable: true,
         });
@@ -50,13 +50,10 @@ const SignUpForm = () => {
         toast({
           title: { error },
           status: "error",
-          position:"top",
+          position: "top",
           duration: 3000,
           isClosable: true,
         });
-      }
-      if (user) {
-        navigate(from, { replace: true });
       }
     }
   };
@@ -67,7 +64,7 @@ const SignUpForm = () => {
       toast({
         title: "Account created successfully!",
         status: "success",
-        position:"top",
+        position: "top",
         duration: 3000,
         isClosable: true,
       });
@@ -76,12 +73,18 @@ const SignUpForm = () => {
       toast({
         title: { error },
         status: "error",
-        position:"top",
+        position: "top",
         duration: 3000,
         isClosable: true,
       });
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   return (
     <div>

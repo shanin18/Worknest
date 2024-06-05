@@ -19,11 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <PrivateRoute>
-            <Home />
-          </PrivateRoute>
-        ),
+        element: <Home />,
       },
       {
         path: "/jobs",
@@ -31,11 +27,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/jobs/details/:id",
-        element: <JobDetails />,
+        element: (
+          <PrivateRoute>
+            <JobDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-applications",
-        element: <MyApplications />,
+        element: (
+          <PrivateRoute>
+            <MyApplications />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -53,15 +57,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "all-jobs",
-        element: <AllJobs />,
+        element: (
+          <PrivateRoute>
+            <AllJobs />
+          </PrivateRoute>
+        ),
       },
       {
         path: "add-jobs",
-        element: <AddJobs />,
+        element: (
+          <PrivateRoute>
+            <AddJobs />
+          </PrivateRoute>
+        ),
       },
       {
         path: "edit-jobs/:id",
-        element: <EditJobs />,
+        element: (
+          <PrivateRoute>
+            <EditJobs />
+          </PrivateRoute>
+        ),
       },
     ],
   },

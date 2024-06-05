@@ -81,7 +81,7 @@ const Navbar = () => {
               />
               <p className="font-semibold text-xl">WorkNest</p>
             </div>
-            <div className="hidden md:ml-6 md:flex items-center">
+            <div className="hidden md:flex items-center">
               <div className="flex space-x-2 gap-2">
                 <NavLink
                   to="/"
@@ -101,15 +101,17 @@ const Navbar = () => {
                 >
                   Jobs
                 </NavLink>
-                <NavLink
-                  to="/my-applications"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                  aria-current="page"
-                >
-                  Applications
-                </NavLink>
+                {user?.email && (
+                  <NavLink
+                    to="/my-applications"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "inactive"
+                    }
+                    aria-current="page"
+                  >
+                    Applications
+                  </NavLink>
+                )}
                 {user?.email && (
                   <NavLink
                     to="/dashboard/all-jobs"
@@ -217,14 +219,12 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`md:hidden absolute w-full top-0 duration-300 h-screen ${
+        className={`h-screen w-full md:hidden absolute top-0 duration-300 z-50 ${
           colorMode === "dark" ? "bg-[#1a202c]" : "bg-white"
         } ${mobileMenuOpen ? "left-0" : "-left-[770px]"}`}
-        id="mobile-menu"
       >
         <div className="flex flex-shrink-0 items-center justify-between border-b px-5 py-3">
           <p className="font-semibold text-xl">WorkNest</p>
-
           <IconButton
             onClick={() => setMobileMenuOpen(false)}
             isRound={true}
@@ -242,6 +242,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? "active w-full" : "inactive w-full"
             }
+            onClick={() => setMobileMenuOpen(false)}
             aria-current="page"
           >
             Home
@@ -249,21 +250,26 @@ const Navbar = () => {
           <NavLink
             to="/jobs"
             className={({ isActive }) => (isActive ? "active" : "inactive")}
+            onClick={() => setMobileMenuOpen(false)}
             aria-current="page"
           >
             Jobs
           </NavLink>
-          <NavLink
-            to="/my-applications"
-            className={({ isActive }) => (isActive ? "active" : "inactive")}
-            aria-current="page"
-          >
-            My Applications
-          </NavLink>
+          {user?.email && (
+            <NavLink
+              to="/my-applications"
+              className={({ isActive }) => (isActive ? "active" : "inactive")}
+              onClick={() => setMobileMenuOpen(false)}
+              aria-current="page"
+            >
+              Applications
+            </NavLink>
+          )}
           {user?.email && (
             <NavLink
               to="/dashboard/all-jobs"
               className={({ isActive }) => (isActive ? "active" : "inactive")}
+              onClick={() => setMobileMenuOpen(false)}
               aria-current="page"
             >
               Dashboard
@@ -276,6 +282,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? "active w-full" : "inactive w-full"
               }
+              onClick={() => setMobileMenuOpen(false)}
               aria-current="page"
             >
               {location.pathname === "/login" ? "Login" : "Sign Up"}
