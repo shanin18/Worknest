@@ -36,6 +36,8 @@ const Hero = ({ handleSubmit }) => {
               <input
                 type="text"
                 name="search"
+                defaultValue="english"
+                placeholder="Search Jobs"
                 className="w-full rounded border border-gray-300 bg-transparent focus:border-indigo-500 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>

@@ -19,6 +19,13 @@ const QuickJobs = ({ filterText }) => {
     item.title.toLowerCase().includes(filterText.toLowerCase())
   );
 
+  if (filterText.length > 0) {
+    localStorage.setItem("filterText", filterText);
+  } else {
+    localStorage.removeItem("filterText");
+  }
+
+
   return (
     <section>
       <h2 className="font-semibold text-indigo-500 text-3xl text-center mb-10">
@@ -35,10 +42,13 @@ const QuickJobs = ({ filterText }) => {
         </div>
       )}
 
-      {!filteredJobs?.length === 0 && (
+      {filteredJobs?.length > 6 && (
         <div className="flex items-center justify-center mt-12">
           <Link
-            to="/jobs"
+            to={{
+              pathname: "/jobs",
+              state: { filterText },
+            }}
             className="text-white font-medium text-lg px-5 py-2 rounded bg-indigo-500 hover:bg-indigo-600"
           >
             See More
