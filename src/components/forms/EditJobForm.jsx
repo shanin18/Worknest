@@ -46,7 +46,7 @@ const EditJobForm = ({ data }) => {
     },
     onError: (error) => {
       toast({
-        title: error,
+        title: "Something went wrong. Try Again!",
         status: "error",
         position: "top",
         duration: 3000,

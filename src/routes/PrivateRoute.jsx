@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import LoadingSpinner from "../components/others/LoadingSpinner";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   const location = useLocation();
 
   if (loading) {
-    return <h1 className="container mx-auto mt-10">Loading...</h1>;
+    return <LoadingSpinner />;
   }
 
   if (user) {

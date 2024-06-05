@@ -41,7 +41,7 @@ const JobCard = ({ job }) => {
     },
     onError: (error) => {
       toast({
-        title: error,
+        title:  "Something went wrong. Please try again!",
         status: "error",
         position: "top",
         duration: 3000,

@@ -11,11 +11,13 @@ import EditJobs from "../pages/EditJobs";
 import Jobs from "../pages/Jobs";
 import MyApplications from "../pages/MyApplications";
 import JobDetails from "../pages/JobDetails";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -54,6 +56,7 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <DashboardLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "all-jobs",

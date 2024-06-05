@@ -20,20 +20,20 @@ const LoginForm = () => {
     try {
       await signIn(data?.email, data?.password);
       toast({
-        title: 'Login successfully!',
-        status: 'success',
-        position:"top",
+        title: "Login successfully!",
+        status: "success",
+        position: "top",
         duration: 3000,
         isClosable: true,
-      })
+      });
     } catch (error) {
       toast({
-        title: 'Something went wrong! try Again',
-        status: {error},
-        position:"top",
+        title: "Please check your email and password!",
+        status: "error",
+        position: "top",
         duration: 3000,
         isClosable: true,
-      })
+      });
     }
   };
 
@@ -101,14 +101,14 @@ const LoginForm = () => {
         </div>
 
         <div>
-        <Button
-          colorScheme=""
-          color="white"
-          type="submit"
-          className=" bg-indigo-500 py-2 px-6 hover:bg-indigo-600 w-full"
-        >
-          Log In
-        </Button>
+          <Button
+            colorScheme=""
+            color="white"
+            type="submit"
+            className=" bg-indigo-500 py-2 px-6 hover:bg-indigo-600 w-full"
+          >
+            Log In
+          </Button>
         </div>
       </form>
     </section>

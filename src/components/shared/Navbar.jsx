@@ -18,6 +18,7 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { logout, user } = useAuth();
   const toast = useToast();
+  console.log(location);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -53,7 +54,7 @@ const Navbar = () => {
       });
     } catch (error) {
       toast({
-        title: { error },
+        title: "Something went wrong. Please try again!",
         status: "error",
         position: "top",
         duration: 3000,
@@ -125,13 +126,13 @@ const Navbar = () => {
                 )}
                 {!user?.email && (
                   <NavLink
-                    to={location.pathname === "/login" ? "/login" : "/signup"}
+                    to={location.pathname === "/signup" ? "/signup" : "/login"}
                     className={({ isActive }) =>
                       isActive ? "active w-full" : "inactive w-full"
                     }
                     aria-current="page"
                   >
-                    {location.pathname === "/login" ? "Login" : "Sign Up"}
+                    {location.pathname === "/signup" ? "Sign Up" : "Login"}
                   </NavLink>
                 )}
               </div>
@@ -278,14 +279,14 @@ const Navbar = () => {
 
           {!user?.email && (
             <NavLink
-              to={location.pathname === "/login" ? "/login" : "/signup"}
+              to={location.pathname === "/signup" ? "/signup" : "/login"}
               className={({ isActive }) =>
                 isActive ? "active w-full" : "inactive w-full"
               }
               onClick={() => setMobileMenuOpen(false)}
               aria-current="page"
             >
-              {location.pathname === "/login" ? "Login" : "Sign Up"}
+              {location.pathname === "/signup" ? "Sign Up" : "Login"}
             </NavLink>
           )}
         </div>

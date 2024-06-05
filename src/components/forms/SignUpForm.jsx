@@ -48,7 +48,7 @@ const SignUpForm = () => {
         });
       } catch (error) {
         toast({
-          title: { error },
+          title:  "Please check your email and password!",
           status: "error",
           position: "top",
           duration: 3000,
@@ -71,7 +71,7 @@ const SignUpForm = () => {
       navigate(from, { replace: true });
     } catch (error) {
       toast({
-        title: { error },
+        title: "Something went wrong. Please try again!",
         status: "error",
         position: "top",
         duration: 3000,
