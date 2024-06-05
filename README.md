@@ -2,9 +2,9 @@
 
 <!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Contents <a name="about-project">Dua & Ruqyah</a>
+# 📗 Table of Contents <a name="about-project">WorkNest</a>
 
-- [🤲 Dua & Ruqyah ](#-Dua-Ruqyah-)
+- [WorkNest](#-WorkNest-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -13,23 +13,21 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Run tests](#run-tests)
+    - [Email & Password](#Email-Password)
     - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [❓ FAQ ](#-faq-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 🤲 Dua Ruqyah <a name="about-project"></a>
+# WorkNest <a name="about-project"></a>
 
-
-Welcome to our webpage dedicated to dua and ruqyah, curated by the IRD Foundation. Explore a treasure trove of Islamic supplications and healing practices, meticulously organized to cater to various needs. Whether seeking divine guidance, protection, or remedy from ailments, our webpage offers a comprehensive resource for spiritual growth and well-being. Join us on this journey of faith and empowerment as we harness the transformative power of dua and ruqyah.
+WorkNest is a cutting-edge platform designed to connect job seekers with employers in a seamless and efficient manner. Offering a comprehensive array of job listings across various industries, WorkNest simplifies the job search process with user-friendly features and advanced filtering options. Whether you are looking for your next career opportunity or the perfect hire, WorkNest provides the ideal ecosystem to meet your employment needs.
 
 <div style={text-align:center}><img src="https://i.ibb.co/KVfKJ76/thumbnail.png" alt="thumbnail" border="0"></div>
-
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -38,22 +36,22 @@ Welcome to our webpage dedicated to dua and ruqyah, curated by the IRD Foundatio
 <details>
   <summary>Front-end</summary>
   <ul>
-    <li><a href="https://nextjs.org/">NextJs</a></li>
-    <li><a href="https://tailwindcss.com/">Tailwind</a></li>
-    <li><a href="https://daisyui.com/">DaisyUI</a></li>
+    <li><a href="https://react.dev/">ReactJs</a></li>
+    <li><a href="https://tailwindui.com/">Tailwind</a></li>
+    <li><a href="https://v2.chakra-ui.com//">Chakra Ui</a></li>
   </ul>
 </details>
 <details>
   <summary>Back-end</summary>
   <ul>
-    <li><a href="https://www.rubyonrails.org/en/">Node JS</a></li>
+    <li><a href="https://expressjs.com/">ExpressJS</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.sqlite.org/">SQLite</a></li>
+    <li><a href="https://mongodb.com">MongoDB</a></li>
   </ul>
 </details>
 
@@ -61,26 +59,19 @@ Welcome to our webpage dedicated to dua and ruqyah, curated by the IRD Foundatio
 
 ### Key Features <a name="key-features"></a>
 
-
+- **Comprehensive Job Listings**
 - **User-Friendly Interface**
-- **Search Functionality**
-- **Comprehensive Dua Collection**
-- **Educational Resources**
 - **Mobile Compatibility**
-- **Audio**
-- **Transliteration**
-- **Translation**
-
+- **Advanced Filtering Options**
+- **Authentication System**
+- **User Profile Management**
+- **Admin Dashboard**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- <a href="https://dua-ruqaiya.vercel.app/">Live Demo</a>
 
-## 🚀 About the project on video <a name="live-demo"></a>
-- <a href="https://www.youtube.com/watch?v=wIzSlshMt0I">Video</a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- <a href="https://worknest-rose.vercel.app/">Live Demo</a>
 
 <!-- GETTING STARTED -->
 
@@ -88,28 +79,23 @@ Welcome to our webpage dedicated to dua and ruqyah, curated by the IRD Foundatio
 
 To get a local copy up and running, follow these steps.
 
-
 ### Setup
 
 Clone this repository to your desired folder:
 
-
 ```sh
   cd my-folder
-  git clone https://github.com/shanin18/Dua-Rukya-Client.git
+  git clone https://github.com/shanin18/Worknest.git
 ```
-
 
 ### Install
 
 Install this project with:
 
-
 ```sh
-  cd Dua-Ruqyah
+  cd worknest
   npm install
 ```
-
 
 ### Run tests
 
@@ -119,20 +105,26 @@ To run tests, run the following command:
   npm run dev
 ```
 
+### Email & Password
+
+For login, you can use the email & password given below:
+
+```sh
+  email: shanin1@gmail.com
+  password: 123456
+```
+
+Or you can use your google account fo authenticate.
 
 ### Deployment
 
 You can deploy this project using:
 
+<a href="https://vercel.com">Vercel</a>
 
- <a href="https://vercel.com">Vercel</a>
-  
-  by following the docs instructions
-
-
+by following the docs instructions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -148,14 +140,11 @@ You can deploy this project using:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -163,22 +152,8 @@ Please ⭐️ this repository if you found the project useful.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank IRD Foundation for this amazing Job Task.
+Some of the component of this project inspired by Internshala
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **What languages are available for translation on the webpage?**
-
-  - The webpage offers translations of dua and ruqyah texts in multiple languages to cater to diverse audiences and facilitate broader accessibility and understanding.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
